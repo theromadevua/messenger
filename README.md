@@ -2,7 +2,7 @@
 
 # Messenger
 
-Multifunctional real-time messaging application with features such as user authentication, user roles, read receipts and file sharing.
+Multifunctional real-time messaging application with features such as user authentication, user roles, voice messaging and file sharing.
 
 ## Stack
 
@@ -18,11 +18,14 @@ Frontend:
 ## Screenshots
 
 Private and public chats with real-time messaging
-<img src="preview1.png" width="700"/>
+
+<img src="preview1.png" width="600"/>
 
 Multimedia messages
-<img src="preview1.png" width="800"/>
+
+<img src="preview2.png" width="700"/>
 
 Adaptation for mobile devices
+
 <img src="preview3.png" width="300"/>
 
