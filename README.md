@@ -1,4 +1,5 @@
-![status](https://img.shields.io/badge/status-in%20progress-yellow) IN DEVELOPMENT
+![status](https://img.shields.io/badge/status-in%20progress-yellow) 
+IN DEVELOPMENT
 
 # Messenger
 
@@ -11,6 +12,7 @@ Backend:
 - Express
 - MongoDb
 - Socket.io
+
 Frontend:
 - React
 - Mobx
@@ -29,3 +31,4 @@ Adaptation for mobile devices
 
 <img src="preview3.png" width="300"/>
 
+*the application is under active development
