@@ -1,0 +1,49 @@
+.confirm-window{
+    top: 0;
+    left: 0;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    cursor: pointer;
+    &__content{
+      cursor: auto;
+      font-size: 16px;
+      padding: 15px;
+      border-radius: 5px;
+      background-color: var(--main-color);
+    }
+    &__buttons-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      button{
+        font-size: 16px;
+        background: none;
+        border: none;
+        color: var(--light-grey-color);
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      :first-child{
+        color: var(--rose-color);
+        &:hover{
+          color: red;
+        }
+      }
+      :last-child{
+        padding: 5px 10px;
+        background-color: rgba(255,255,255,0.1);
+        color: lightblue;
+        &:hover{
+          background-color: rgba(255,255,255,0.15);
+        }
+      }
+    }
+  }

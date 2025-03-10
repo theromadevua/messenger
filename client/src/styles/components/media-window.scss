@@ -1,0 +1,299 @@
+.media-content-background-enter {
+    opacity: 0;
+  }
+  
+  .media-content-background-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease;
+  }
+  
+  .media-content-background-exit {
+    opacity: 1;
+  }
+  
+  .media-content-background-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+.media-content-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.media-content-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.media-content-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.media-content-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.media-window{
+    cursor: pointer;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__select-params{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+    }
+    &__select-params-container{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    &__range-label{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__title{
+        font-size: 16px;
+        color: #ffffff;
+        margin: 10px 0px;
+    }
+    &__image-container{
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        display: flex;
+        cursor: pointer;
+        *{
+            cursor: pointer;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50.7%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            z-index: 3;
+        }
+        &::after{
+            content: '+';
+            color: rgba(255, 255, 255, 0.8);;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            z-index: 4;
+        }
+    }
+    &__input-container{
+        display: flex;
+        margin-top: 10px;
+        gap: 10px;
+        width: 100%;
+    }
+    &__input{
+        cursor: text;
+        *{
+            cursor: text;
+        }
+        min-width: 350px;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        &::placeholder{
+            color: #ffffff;
+        }
+        border: none;
+        outline: none;
+    }
+    &__content{
+        align-items: center;
+        cursor: auto;
+        padding: 7px;
+        width: max-content;
+        height: max-content;
+        background: rgba(255,255,255,0.1);
+        border-radius: 15px;
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        margin-bottom: 80px;
+    }
+    &__loader{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 10;
+    }
+    &__images{
+        display: flex;
+        gap: 5px;
+        max-width: 1000px;
+        height: max-content;
+    }
+    &__image{
+        z-index: 1;
+        position: relative;
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    &__image-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        z-index: 2;
+    }
+    &__buttons-container{
+        padding: 0px 100px;
+        left: 0;
+        bottom: 0;
+        transform: translateY(calc(100% + 30px));
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        cursor: pointer;
+    }
+    &__button{
+        min-width: 50px;
+        height: 50px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        *{
+            cursor: pointer;
+        }
+        gap: 10px;
+        white-space: nowrap;
+        p{
+            white-space: nowrap;
+        }
+        img{
+            width: 20px;
+            display: flex;
+        }
+        &:hover{
+            background: rgba(255,255,255,0.2);
+        }
+    }
+    &__image-close-icon{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        backdrop-filter: blur(5px) invert(30%);
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        outline: none;
+        display: flex;
+        align-items: center;
+        padding: 3px;
+        z-index: 10;
+        cursor: pointer;
+        *{
+            cursor: pointer;
+        }
+        border-radius: 7px;
+        img{
+            width: 15px;
+        }
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+.grid-one {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.grid-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "a a"
+        "b c";
+}
+
+.grid-four {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+}
+
+.grid-three div:nth-child(1) {
+    grid-area: a;
+}
+
+.grid-three div:nth-child(2) {
+    grid-area: b;
+}
+
+.grid-three div:nth-child(3) {
+    grid-area: c;
+}
+
+.image-loaded{
+    &::after{
+        opacity: 0;
+    }
+    &::before{
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .media-window{
+        &__content{
+            transform: scale(0.9);
+        }
+      
+    }
+}

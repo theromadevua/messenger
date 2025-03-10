@@ -1,0 +1,129 @@
+
+
+.chat-input{
+    width: calc(var(--chat-container-width));
+    height: calc(var(--chat-input-height));
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+
+    &__reply-block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 5px 5px 0px 0px;
+        background-color: rgba(52, 55, 59, 0.5);
+        backdrop-filter: blur(50px);
+        width: calc(var(--chat-container-width) - 20px);
+        height: calc(var(--chat-input-height) - 10px);
+        position: absolute;
+        bottom: 100%;
+        cursor: pointer;
+        *{
+            cursor: pointer;
+        }
+        h3{
+            color:  lightblue;
+            font-size: 14px;
+        }
+        p{
+            white-space: nowrap; 
+            overflow: hidden;      
+            text-overflow: ellipsis; 
+            color: rgb(183, 183, 183);
+            width: calc(var(--chat-container-width) - 150px);
+        }
+    }
+
+    &__reply-info{
+        display: flex;
+        align-items: center;
+
+        &-text{
+            margin-left: 10px;
+        }
+    }
+
+    .chat-input__container{
+        border-radius: 5px;
+        padding: 0px 10px;
+        width: calc(var(--chat-container-width) - 20px);
+        height: calc(var(--chat-input-height) - 10px);
+        background-color: var(--chat-input-color);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &--with-reply-block{
+            border-radius: 0px 0px 5px 5px;
+        }
+
+        &_join{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            white-space: nowrap; 
+        }
+
+        input{
+            background: none;
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 0px 5px;
+            height: 100%;
+            font-size: 16px;
+            cursor: text;
+        }
+
+        .send-button{
+            background: none;
+            border: none;
+            height: max-content;
+            display: flex;
+            cursor: pointer;
+            *{
+                cursor: pointer;
+            }
+        }
+
+        .icon{
+            cursor: pointer;
+            width: 25px;
+            border-radius: 5px;
+            transition: 0.1s ease;
+        }
+    }
+    &__buttons{
+        display: flex;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        gap: 8px;
+        padding: 5px;
+        &::after{
+
+        }
+    }
+}
+
+.chat-input-button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    width: 25px;
+    height: 25px;
+    *{
+        cursor: pointer;
+    }
+}
+
+.voice-recorder{
+    border: none;
+    display: flex;
+    cursor: pointer;
+}

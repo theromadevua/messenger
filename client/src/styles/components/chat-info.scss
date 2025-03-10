@@ -1,0 +1,191 @@
+
+
+.chat-info{
+    width: var(--chat-info-width);
+    height: 100vh;
+    background-color: var(--main-color);
+    position: relative;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-left: 1px solid var(--dark-grey-color);
+
+    .navigate-button{
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    &__mobile-navigation-block{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__divider{
+        margin: 10px 0px;
+        height: 1px;
+        background-color: var(--grey-color);
+        border: none;
+    }
+
+    &__edit-button{
+        width: max-content;
+        margin-left: 100%;
+        transform: translateX(-100%);
+        background: none;
+        color: var(--light-grey-color);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &:hover{
+            color: white;
+        }
+    }
+
+    &__data{
+        margin: 10px 0px;
+
+        input{
+            cursor: text;
+        }
+        
+        textarea{
+            cursor: text;
+        }
+    }
+
+    &__description{
+        width: 100%;
+        outline: none;
+        border: none;
+        background-color: var(--main-color);
+        resize: none;
+        font-size: 16px;
+    }
+
+    &__link {
+        font-size: 18px;
+        width: 100%;
+        outline: none;
+        border: none;
+        background-color: var(--main-color);
+    }
+
+    &__name{
+        border: none;
+        outline: none;
+        background-color: var(--main-color);
+        font-size: 18px;
+        width: 100%;
+    }
+
+    &__avatar{
+        width: 100%;
+        max-width: 500px;
+        max-height: 500px;
+        height: calc(var(--chat-info-width) - 20px);
+        background-color: var(--grey-color);
+        display: flex;
+
+        img{
+            cursor: pointer;
+            object-fit: cover;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .avatar-placeholder{
+            cursor: pointer;
+            *{
+                cursor: pointer;
+            }
+        }
+        
+    }
+
+    &__tag{
+        font-size: 14px;
+        margin: 2px 0px;
+        color: var(--light-grey-color);
+    }
+
+    &__chat-member{
+        width: 100%;
+        display: flex;
+        height: max-content;
+        align-items: center;
+        border-radius: 5px;
+        padding: 5px;
+        cursor: pointer;
+        *{
+            cursor: pointer;
+        }
+
+        &:hover{
+            background-color: var(--grey-color);
+        }
+        &-avatar-placeholder{
+            width: 45px;
+            height: 45px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__chat-member-info{
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: max-content;
+
+        h3{
+            font-size: 16px;
+        }
+
+        p{
+            color: var(--light-grey-color);
+            text-transform: lowercase;
+        }
+    }
+
+    &__chat-member-avatar{
+        width: 45px;
+        display: flex;
+        
+        img{
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    &__chat-list-button{
+        margin-bottom: 5px;
+        width: max-content;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: var(--grey-color);;
+    }
+
+    &__add-user-button {
+        position: fixed;
+        padding: 10px;
+        bottom: 10px;
+        right: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 5px;
+        align-items: center;
+        cursor: pointer;
+        *{
+            cursor: pointer;
+        }
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+        display: flex;
+        gap: 5px;
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}

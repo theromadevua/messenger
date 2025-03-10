@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import 'components/message.scss';
+@import 'components/side-bar.scss';
+@import 'components/settings.scss';
+@import 'components/chat-input.scss';
+@import 'components/chat-info.scss';
+@import 'components/chat-bar.scss';
+@import 'components/audio-player.scss';
+@import 'components/add-user.scss';
+@import 'components/header.scss';
+@import 'components/chat-item.scss';
+@import 'components/create-chat.scss';
+@import 'components/media-window.scss';
+@import 'components/confirm-menu.scss';
+@import 'login.scss';
+@import 'chat.scss';
+
+:root{
+  --white-color: rgb(0, 0, 0);
+  --dark-grey-color: rgb(231, 231, 231);
+  --grey-color: rgb(212, 212, 212);
+  --side-bar-width: 300px;
+  --chat-info-width: 300px;
+  --chat-input-height: 60px;
+  --main-color: rgb(255, 255, 255);
+  --light-grey-color: rgb(161, 177, 194);
+  --chat-container-width: calc(100vw - var(--side-bar-width) - var(--chat-info-width));
+  --chat-bar-height: calc(100dvh - 120px);
+  --chat-bar-color: rgb(255, 255, 255);
+  --chat-input-color: var(--main-color);
+  --translateY: 0px;
+  --rose-color: rgb(255, 77, 77);
+  --dark: #d1d1d1;
+  --chat-message-color: rgb(255, 255, 255);
+}
+
+body.dark{
+  --white-color: rgb(255, 255, 255);
+  --dark-grey-color: rgb(69, 72, 74);
+  --grey-color: rgb(66, 70, 76);
+  --side-bar-width: 300px;
+  --chat-info-width: 300px;
+  --chat-input-height: 60px;
+  --main-color: rgba(52, 55, 59);
+  --light-grey-color: rgb(141, 160, 182);
+  --chat-container-width: calc(100vw - var(--side-bar-width) - var(--chat-info-width));
+  --chat-bar-height: calc(100dvh - 120px);
+  --chat-bar-color: rgb(0, 0, 0);
+  --chat-input-color: var(--main-color);
+  --translateY: 0px;
+  --rose-color: rgb(255, 77, 77);
+  --dark: #161616;
+  --chat-message-color: var(--light-grey-color);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  color: var(--white-color);
+  font-size: 14px;
+  font-family: "Nunito Sans", serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor:default
+}
+
+
+body.dark{
+  background-color: var(--chat-bar-color);
+  background-image: 
+      linear-gradient(45deg, var(--dark) 25%, transparent 25%), 
+      linear-gradient(-45deg, var(--dark) 25%, transparent 25%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+}
+
+body{
+  background-color: rgb(187, 187, 187);
+  background-image: 
+      linear-gradient(45deg, var(--dark) 25%, transparent 25%), 
+      linear-gradient(-45deg, var(--dark) 25%, transparent 25%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+}
+
+
+@media screen and (max-width: 1140px) {
+  body{
+    --side-bar-width: 100vw !important;
+    --chat-info-width: 100vw !important;
+    --chat-container-width: 100vw !important;
+  }
+
+}
+
+
+.navigate-button{
+  cursor: pointer;
+  *{
+    cursor: pointer;
+  }
+}
+
+.title{
+  font-size: 16px;
+}
+
+.menu{
+  top: 100%;
+  position: absolute;
+  min-width: 200px;
+  background: rgba(77, 82, 88, 0.6);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+  z-index: 10;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  &--settings{
+    top: calc(100% + 10px)
+  }
+  &--header{
+    right: 100% !important;
+    top: 100% !important;
+  }
+  &__item{
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    *{
+      cursor: pointer;
+    }
+    svg{
+      width: 18px;
+      height: 18px;
+    }
+    &:hover{
+      filter: brightness(60%);
+    }
+  }
+  hr{
+    width: calc(100% - 12px);
+    margin-left: 5px;
+    border: none;
+    height: 2px;
+    border-radius: 5px;
+    background-color: rgba(162, 172, 185, 0.2);
+  }
+}
+
+.reverse-menu{
+  transform: translateY(-100%);
+}
+
+.menu-enter {
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0.5) translateY(var(--translateY));
+}
+
+.menu-enter-active {
+  z-index: 100;
+  opacity: 1;
+  transform: scale(1) translateY(var(--translateY));
+  transition: 300ms;
+}
+
+.menu-exit {
+  z-index: 100;
+  opacity: 1;
+  transform: scale(1) translateY(var(--translateY));
+}
+
+.menu-exit-active {
+  opacity: 0;
+  z-index: 100;
+  transform: scale(0.5) translateY(var(--translateY));
+  transition: 300ms;
+}
+
+.menu-enter, .menu-enter-active, .menu-exit, .menu-exit-active {
+  will-change: transform, opacity;
+}
+
+.message-menu{
+  z-index: 100;
+  position: fixed;
+}
+
+.input-disabled{
+  cursor:default !important;
+  pointer-events: none;
+  *{
+    pointer-events: none;
+    cursor:default !important;
+  }
+}
+
+.status{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+.spinner-container {
+  position: relative;
+  z-index: 100;
+  animation: spin 2s linear infinite;
+}
+
+.spinner-background,
+.spinner-foreground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.spinner-background {
+  border: 3px solid #e5e7eb;
+}
+
+.spinner-foreground {
+  border: 3px solid #3b82f6;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  animation: dash 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,137 @@
+
+.add-user{
+    &__avatar-placeholder{
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__content{ 
+        cursor: auto;
+        width: 300px;
+        background: var(--main-color);
+        padding: 20px;
+        border-radius: 8px;
+    }
+    &__users-container{
+        height: 200px;
+    }
+    &__close-button{
+        border: none;
+        outline: none;
+        color: var(--light-grey-color);
+        background: none;
+        cursor: pointer;
+        margin-bottom: 10px;
+        &:hover{
+            color: white;
+        }
+    }
+    &__add-button{
+        float: right;
+        border: none;
+        outline: none;
+        color: var(--light-grey-color);
+        background: none;
+        cursor: pointer;
+        margin-top: 10px;
+        &:hover{
+            color: white;
+        }
+    }
+    h2{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    input{
+        font-size: 16px;
+        margin: 5px 0px;
+        width: 100%;
+        padding: 10px 12px;
+        background-color: var(--grey-color);
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        cursor: text;
+    }
+    &__user{
+        width: 100%;
+        display: flex;
+        height: max-content;
+        align-items: center;
+        cursor: pointer;
+        *{
+            cursor: pointer;
+        }
+        border-radius: 5px;
+        padding: 5px;
+        &:hover{
+            .add-user__user-avatar{
+                background: var(--main-color);
+            }
+            background-color: var(--grey-color);
+        }
+    }
+    &__user-info{
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: max-content;
+        h3{
+            font-size: 16px;
+        }
+        p{
+            color: var(--light-grey-color);
+            text-transform: lowercase;
+        }
+    }
+    &__user-avatar{
+        position: relative;
+        background: var(--grey-color);
+        width: 45px;
+        border-radius: 5px;
+        display: flex;
+        height: 45px;
+        display: flex;   
+        img{
+            height: 100%;
+            border-radius: 5px;
+        }
+        p{
+            text-align: center;
+            background-color:  rgba(0, 0, 0, 0.5);
+            border-radius: 3px;
+            font-size: 9px;
+            
+            position: absolute;
+            bottom: 4px;
+            line-height: 1;
+            text-transform: uppercase;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+}
+
+.selected{
+    background: var(--grey-color);
+    .add-user__user-avatar{
+        background-color: var(--main-color);
+    }
+}
+
+.member-user{
+    .add-user__user-avatar{
+        width: 45px;
+        height: 45px;
+        display: flex;
+        border-radius: 5px;
+        img{
+            height: 100%;
+            border-radius: 5px;
+        }
+    }
+}

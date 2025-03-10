@@ -1,0 +1,102 @@
+
+
+.side-bar{
+    width: var(--side-bar-width);
+    height: 100vh;
+    border-right: 1px solid var(--dark-grey-color);
+    background: var(--main-color);
+    &__search-results{
+        padding: 7px 10px;
+        margin-bottom: 10px;
+        background-color: var(--dark-grey-color);
+    }
+    &__search-close-button{
+        cursor: pointer !important;
+        *{
+            cursor: pointer !important;
+        }
+    }
+    &__search-block{
+        position: relative;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        background-color: var(--main-color);
+    }
+    &__search-container{
+        cursor: text;
+        *{
+            cursor: text;
+        }
+        background-color: var(--dark-grey-color);
+        width: calc(100% - 30px);
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        margin-left: 15px;
+        padding: 10px 7px;
+        position: relative;
+        .side-bar__search-icon{
+            width: 22px;
+        }
+        .side-bar__close-search-icon{
+            padding: 2px;
+            width: 22px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+    &__search{
+        border: none;
+        background: none;
+        width: 100%;
+        outline: none;
+        font-size: 16px;
+        padding: 0px 10px;
+        &:focus{
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+.menu-btn {
+    position: relative;
+    cursor: pointer;
+    *{
+        cursor: pointer;
+    }
+    transition: all 0.5s ease-out;
+    width: max-content;
+    height: max-content;
+    padding: 1px 0px;
+   .btn-line {
+      width: 25px;
+      height: 2px;
+      border-radius: 50px;
+      margin: 5px 0 5px 0;
+      background: rgb(200, 200, 200);
+      transition: all 0.3s ease-out;
+    }
+    &--header{
+        .btn-line {
+            width: 20px;
+            margin: 5px 0 5px 0;
+        }
+    }
+    &.close {
+     .btn-line {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(4px, 5px);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -6px);
+        }
+      }
+    }
+}
